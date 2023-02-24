@@ -25,3 +25,48 @@ CREATE TABLE albums_tracks (
     album_id int REFERENCES albums(album_id),
     track_id int REFERENCES tracks(track_id)
 );
+
+INSERT INTO albums(title, release_year)
+VALUES ('Various Positions', 1984),
+('The Essential Leonard Cohen', 2002),
+('Help!', 1965), 
+('Hotel California', 1976),
+('Hell Freezes Over', 1994),
+('The Very Best of the Eagles', 1994),
+('Appetite for Destruction', 1987),
+('Use Your Illusion 11', 1991), 
+('We Are Not Alone', 2004), 
+('Dreaming Out Loud', 2007),
+('Native', 2013);
+
+INSERT INTO tracks(title, length, genre)
+VALUES ('Hallelujah', 4, 'pop rock'),
+('Yesterday', 2, 'soft rock'),
+('Hotel California', 6, 'soft rock'),
+('Sweet Child O Mine', 6, 'heavy metal'),
+('So Cold', 4, 'alternative metal'),
+('Sooner or Later', 3, 'alternative metal'),
+('Apologize', 3, 'pop rock'),
+('Stop and Stare', 3, 'alternative rock'),
+('Counting Stars', 4, 'pop rock'),
+('Love Runs Out', 3, 'funck rock'),
+('Coming Back to You', 3, 'pop rock'),
+('New Kid in Town', 5, 'soft rock');
+
+INSERT INTO albums_tracks(album_id, track_id)
+VALUES (1, 1), 
+(1, 11),
+(2, 1),
+(3, 2),
+(4, 3), 
+(4, 12),
+(5, 3),
+(6, 3),
+(7, 4),
+(8, 4),
+(9, 5),
+(9, 6),
+(10, 7),
+(10, 8),
+(11, 9), 
+(11, 10);
