@@ -70,3 +70,37 @@ VALUES (1, 1),
 (10, 8),
 (11, 9), 
 (11, 10);
+
+SELECT A.title AS "Album Name", T.title AS "Track Name"
+FROM albums AS A 
+INNER JOIN albums_tracks AS ALT 
+ON A.album_id = ALT.album_id
+INNER JOIN tracks AS T 
+ON ALT.track_id = T.track_id
+ORDER BY A.title ASC;
+
+SELECT T.title AS "Track Name", A.title AS "Album Name"
+FROM tracks AS T 
+INNER JOIN albums_tracks AS ALT 
+ON T.track_id = ALT.track_id
+INNER JOIN albums AS A 
+ON ALT.album_id = A.album_id
+ORDER BY T.title ASC;
+
+SELECT A.title AS "Album Name", COUNT(T.title) AS "Track count"
+FROM albums AS A 
+INNER JOIN albums_tracks AS ALT 
+ON A.album_id = ALT.album_id
+INNER JOIN tracks AS T 
+ON ALT.track_id = T.track_id
+GROUP BY A.title
+ORDER BY A.title ASC;
+
+SELECT T.title AS "Track Name", COUNT(A.title) AS "Album Count"
+FROM tracks AS T 
+INNER JOIN albums_tracks AS ALT 
+ON T.track_id = ALT.track_id
+INNER JOIN albums AS A 
+ON ALT.album_id = A.album_id
+GROUP BY T.title
+ORDER BY T.title ASC;
